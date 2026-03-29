@@ -38,9 +38,9 @@ const Home = () => {
         </nav >
 
         {/* Hero Section */}
-        < section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 py-10 relative z-20 gap-16 lg:gap-0" >
+        < section className="flex flex-col max-auto h-auto lg:flex-row items-center justify-between px-6 lg:px-10 py-14 relative z-20 gap-16 lg:gap-0" >
 
-          <div className="w-full lg:w-[25%] flex flex-col items-center lg:items-start text-center lg:text-left -mt-0 lg:-mt-15">
+          <div className="w-full lg:w-[25%]  flex flex-col items-center lg:items-start text-center lg:text-left -mt-0 lg:-mt-15">
 
             <div className="starter-kit flex flex-col gap-3 sm:gap-4 lg:gap-5  items-center lg:items-start">
               <h3 className="font-semibold text-[17px] tracking-[0.18em] text-[#EAFBE7] leading-none">Free Starter Kits</h3>
@@ -48,7 +48,7 @@ const Home = () => {
                 Free beginner or starter kit with purchases over $50.
               </p>
 
-              <div className="icons flex justify-center lg:justify-start items-center w-full translate-x-3 lg:translate-x-0 sm:translate-x-6 mt-3 sm:mt-4 lg:mt-5">
+              <div className="icons flex justify-center lg:justify-start items-center w-full translate-x-3 lg:translate-x-0 sm:translate-x-6 sm:mt-4 lg:mt-5">
                 <img
                   src="/images/ncup.png"
                   alt="icon1"
@@ -66,15 +66,15 @@ const Home = () => {
             </div>
           </div>
           {/* center content */}
-          <div className="hero-center w-full lg:w-[50%] flex flex-col items-center text-center">
+          <div className="hero-center w-full lg:w-[50%] flex flex-col items-center text-center gap-18">
             <div className=" font-semibold text-[50px] lg:text-[90px] text-[#EAFBE7] leading-[1.1] tracking-[-0.02em] space-y-4">
               <h2>Best Matcha</h2>
               <h2 className="text-center">in Town</h2>
             </div>
-            <img src="/images/bowl.png" alt="Matcha Bowl with whisk" className="h-auto" />
+            <img src="/images/ceremonial_matcha_bowl.png" alt="Matcha Bowl with whisk" className="w-[250px] h-[250px] lg:w-[360px] lg:h-[360px]" />
           </div>
           {/* right content */}
-          <div className="hero-right w-full md:w-[25%] flex flex-col items-center md:items-end text-center md:text-right gap-2 -translate-x-0 md:-translate-x-1 -mt-0 md:-mt-15 ">
+          <div className="hero-right w-full md:w-[25%] flex flex-col items-center md:items-end text-center md:text-right gap-2 -translate-x-0 md:-translate-x-1 -mt-0 ">
             <img src="/images/coffe.png" alt="Small Matcha cup" className="w-60 h-60 object-contain  translate-x-5 lg:translate-x-10" />
             <h3 className="font-semibold text-[17px] tracking-[0.18em] text-[#EAFBE7] leading-none">Premium Matcha</h3>
             <p className="text-[13px] leading-[1.6] text-[#A9B9AA] max-w-[180px]">
@@ -158,7 +158,7 @@ const Home = () => {
           {/* Leftside */}
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 overflow-hidden px-4 lg:ml-12">
             <div className="w-full lg:w-[280px] flex justify-center">
-              <h1 className="text-4xl lg:5xl max-w-[240px] text-gray-800 leading-tight font-semibold text-center lg:text-left">Experience Wellness with Every Sip</h1>
+              <h1 className="text-3xl lg:text-4xl max-w-[400px] text-gray-800 leading-tight font-semibold text-center lg:text-left">Experience Wellness with Every Sip</h1>
             </div>
             {/* Rightside */}
             <div className="grid grid-cols-2 gap-8">
@@ -184,37 +184,110 @@ const Home = () => {
             </div>
           </div>
           {/* bottom side */}
-          <div className="flex flex-row pt-20">
-            <div>
-              <div className="w-[100px] h-[100px] rounded-full bg-[#EDEDE8] shadow-sm p-2">
-                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-white">
-                  <img src="/images/greentea.png" alt="greentea" className="w-full h-full object-cover scale-[1.35]" />
+          <div className="flex  flex-col lg:flex-row pt-20 justify-center items-center gap-15">
+            <div className="flex  flex-row lg:flex-col items-start  gap-6">
+              <div className="w-[70px] h-[70px] rounded-full bg-[#EDEDE8] shadow-sm p-2">
+                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+                  <img src="/images/greentea.png" alt="greentea" className="object-contain scale-[1.2] rounded-full" />
                 </div>
               </div>
-              <h2>Rich Flavor & Vibrant Color</h2>
-              <p>Perfectly balanced umami taste with a bright green hue</p>
+              <div className="flex flex-col lg:leading-none lg:gap-4">
+                <h2 className="font-normal text-[15px] lg:text-[20px] max-w-[180px]">Rich Flavor & Vibrant Color</h2>
+                <p className="text-[10px] lg:text-[13px] text-[#71716C] max-w-[220px] font-extrathin">Perfectly balanced umami taste with a bright green hue</p>
+              </div>
             </div>
-            <div>
-              <div className="w-[100px] h-[100px] rounded-full bg-[#EDEDE8] shadow-sm p-2">
-                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-white">
-                  <img src="/images/coffeepowder.jpg" alt="coffeepowder" className="w-full h-full object-cover scale-[1.15]" />
+            <div className="flex  flex-row lg:flex-col items-start  gap-6">
+              <div className="w-[70px] h-[70px] rounded-full bg-[#EDEDE8] shadow-sm p-2 shrink-0">
+                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+                  <img src="/images/coffeepowder.jpg" alt="coffeepowder" className="object-contain scale-[1.2] rounded-full" />
                 </div>
               </div>
-              <h2>Authentic Japanese Matcha</h2>
-              <p>100% ceremonial grade matcha with rich unmami flavor and no bitterness</p>
+              <div className="flex flex-col lg:leading-none lg:gap-4">
+                <h2 className="font-normal text-[15px] lg:text-[20px] max-w-[180px]">Authentic Japanese Matcha</h2>
+                <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin max-w-[220px]">100% ceremonial grade matcha with rich unmami flavor and no bitterness</p>
+              </div>
             </div>
-            <div>
-              <div className="w-[100px] h-[100px] rounded-full bg-[#EDEDE8] shadow-sm p-2">
-                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-white">
-                  <img src="/images/chai.png" alt="chai" className="w-full h-full object-cover scale-[1.35]" />
+            <div className="flex  flex-row lg:flex-col items-start  gap-6">
+              <div className="w-[70px] h-[70px] rounded-full bg-[#EDEDE8] shadow-sm">
+                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+                  <img src="/images/chai.png" alt="chai" className="object-contain scale-[1.1] -translate-y-1 rounded-full" />
                 </div>
               </div>
-              <h2>Healthy & Sustainability</h2>
-              <p>Packed with antioxidants and produced from eco friendly process.</p>
+              <div className="flex flex-col lg:leading-none lg:gap-4">
+                <h2 className="font-normal text-[15px] lg:text-[20px] max-w-[180px]">Healthy & Sustainability</h2>
+                <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin max-w-[220px]">Packed with antioxidants. produced eco friendly process.</p>
+              </div>
             </div>
           </div>
         </div>
+      </section >
 
+      {/* Discover */}
+      <section className="bg-[#E6E6DE] pt-10 pb-10 lg:pb-0 lg:pt-0 h-auto lg:h-[900px] justify-center flex overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto lg:px-10 px-8">
+          <div className="flex justify-center">
+            <h1 className=" text-[2.3em] lg:text-7xl  max-w-[450px] tracking-normal lg:max-w-[650px] py-12  text-gray-800 leading-tight font-semibold text-center">Discover the world of Matcha</h1>
+          </div>
+          <div className="flex  flex-col lg:flex-row gap-6 items-start pt-6">
+            <div className="flex flex-col gap-8 w-full lg:w-[350px] shrink-0">
+              {/* first */}
+              <div className="bg-[#E3E2E4] p-5 relative rounded-xl overflow-hidden flex flex-col gap-25">
+                <div className="flex justify-between gap-4">
+                  <div className="flex flex-col gap-2">
+                    <h1 className="font-semibold text-[17px] tracking-[0.1em] leading-tight">Culinary Grade Matcha</h1>
+                    <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin max-w-[190px] leading-tight">Balanced taste and affordable for everyday use</p>
+                  </div>
+                  <h2 className="font-semibold text-[10px] tracking-[0.1em] whitespace-nowrap">料理用グレードの抹茶</h2>
+                  {/* nowrap use to force text in single line */}
+                </div>
+                <div className=" relative flex justify-between items-end">
+                  <h1 className="flex items-center gap-2 font-semibold text-[20px]">
+                    $18
+                    <span className="font-normal text-[12px] leading-none">
+                      /50 gr
+                    </span>
+                  </h1>
+                  <img src="images/seasonal_variant.png" alt="seasional"
+                    className="w-[170px] h-auto object-contain absolute bottom-[-60px]  right-[-60px]" />
+                </div>
+              </div>
+              {/* second */}
+              <div className="bg-[#E3E2E4] p-5 relative rounded-xl overflow-hidden flex flex-col gap-25">
+                <div className="flex justify-between gap-4">
+                  <div className="flex flex-col gap-2">
+                    <h1 className="font-semibold text-[17px] tracking-[0.1em] leading-tight">Seasonal Variant</h1>
+                    <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin max-w-[190px] leading-tight">Premium matcha and cozy  pumpkin spice</p>
+                  </div>
+                  <h2 className="font-semibold text-[10px] tracking-[0.1em] text-right">季節限定の抹茶バリエーション</h2>
+                </div>
+                <div className="flex justify-between items-end relative">
+                  <h1 className="flex items-center gap-2 font-semibold text-[20px]">
+                    $18
+                    <span className="font-normal text-[12px] leading-none">
+                      /50 gr
+                    </span>
+                  </h1>
+                  <img src="images/pumpkin.png" alt="ceremonial"
+                    className="w-[170px] h-auto object-contain absolute bottom-[-60px]  right-[-60px] scale-[1.4]" />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#E3E2E4] p-9 relative rounded-xl overflow-hidden flex flex-col w-full lg:w-[620px]  min-h-[516px]">
+
+              <div className="flex flex-col gap-6">
+                <h1 className="font-medium text-[20px] tracking-[0.1em]">儀式用抹茶</h1>
+                <h1 className="font-semibold text-[27px]  max-w-[250px] tracking-[0.1em] leading-tight">Ceremonial Grade Matcha</h1>
+                <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin max-w-[190px] leading-tight">Rich in antioxidants, sourced directly from Japan.</p>
+              </div>
+
+              <div className="lg:mt-auto flex justify-between items-end py-4">
+                <h1 className="font-semibold text-3xl">$32 <span className="font-normal text-xl leading-none">/30 gr</span></h1>
+                <img src="/images/ceremonial_matcha_bowl.png" alt="ceremonial" className=" w-[180px] lg:w-[280px] h-auto object-contain absolute bottom-[-10px] lg:bottom-[-20px]  right-[-10px] lg:right-[-20px] scale-[1.3]" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
