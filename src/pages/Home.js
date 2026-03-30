@@ -223,8 +223,8 @@ const Home = () => {
       </section >
 
       {/* Discover */}
-      <section className="bg-[#E6E6DE] pt-10 pb-10 lg:pb-0 lg:pt-0 h-auto lg:h-[900px] justify-center flex overflow-hidden">
-        <div className="w-full max-w-6xl mx-auto lg:px-10 px-8">
+      <section className="bg-[#E6E6DE] pt-10 lg:pb-0 lg:pt-0 h-auto h-[2500px] lg:h-[1500px] justify-center flex overflow-hidden">
+        <div className="w-full max-w-6xl mx-auto lg:px-10 px-8 ">
           <div className="flex justify-center">
             <h1 className=" text-[2.3em] lg:text-7xl  max-w-[450px] tracking-normal lg:max-w-[650px] py-12  text-gray-800 leading-tight font-semibold text-center">Discover the world of Matcha</h1>
           </div>
@@ -287,8 +287,56 @@ const Home = () => {
               </div>
             </div>
           </div>
+
+          <div className="flex pt-6 gap-6 flex-col lg:flex-row">
+            {/* first bottom card */}
+            <div className="bg-[#E3E2E4]  flex-1 basis-0 p-5 relative rounded-xl overflow-hidden flex flex-col min-h-[270px] gap-10 lg:gap-12">
+              <div className="flex flex-col gap-1">
+                <h1 className="font-semibold text-[17px]">Bamboo Whisk(Chasen)</h1>
+                <p className="font-normal text-[12px] max-w-[190px] text-[#71716C] ">
+                  A must-have for smooth, lump-free matcha experience
+                </p>
+              </div>
+              <div className="flex">
+                <h1 className="flex items-end">$12</h1>
+                <img src="/images/bamboo_whisk.png" alt="bamboo_whisk" className="w-[120px] h-[120px] scale-[1.1] object-contain" />
+                <h2 className="flex items-end font-semibold text-[10px]  max-w-[150px] lg:max-w-[100px] tracking-[0.1em] text-right">茶筅を使った抹茶のバリエーション</h2>
+              </div>
+            </div>
+
+            {/* second bottom card */}
+            <div className="bg-[#E3E2E4] flex-1 basis-0 p-5 relative rounded-xl overflow-hidden flex flex-col min-h-[270px] gap-10 lg:gap-12">
+              <div className="flex flex-col gap-1">
+                <h1 className="font-semibold text-[17px] whitespace-nowrap">Matcha Mug</h1>
+                <p className="font-normal text-[12px] max-w-[210px] text-[#71716C] ">
+                  Handcrafted, ergonomic design with a matte finish
+                </p>
+              </div>
+              <div className="flex gap-10">
+                <h1 className="flex items-end">$10</h1>
+                <img src="/images/newMug.png" alt="newmug" className="w-[120px] h-[120px] object-contain scale-[1.6]" />
+                <h2 className="flex items-end font-semibold max-w-[150px] lg:max-w-[100px] text-[10px] max-w-[100px] tracking-[0.1em] text-right">抹茶一杯</h2>
+              </div>
+            </div>
+
+            {/* third bottom card */}
+            <div className="bg-[#E3E2E4] flex-1 basis-0 p-5 relative rounded-xl overflow-hidden flex flex-col min-h-[270px] gap-10 lg:gap-12">
+              <div className="flex flex-col gap-1">
+                <h1 className="font-semibold text-[17px] whitespace-nowrap">Matcha Tea Pot</h1>
+                <p className="font-normal text-[12px] max-w-[240px] text-[#71716C] ">
+                  Ideal for brewing matcha-infused tea.Holds up to 500ml
+                </p>
+              </div>
+              <div className="flex gap-10">
+                <h1 className="flex items-end">$35</h1>
+                <img src="/images/matcha_teapot.png" alt="matcha_tea_pot" className="w-[120px] h-[120px] scale-[1.1] object-contain" />
+                <h2 className="flex items-end font-semibold text-[10px] max-w-[150px] lg:max-w-[100px] tracking-[0.1em] text-right">抹茶一服</h2>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </section>
+      </section >
     </>
   );
 };
