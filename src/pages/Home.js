@@ -223,7 +223,7 @@ const Home = () => {
       </section >
 
       {/* Discover */}
-      <section className="bg-[#E6E6DE] pt-10 lg:pb-0 lg:pt-0 h-auto h-[2500px] lg:h-[1500px] justify-center flex overflow-hidden">
+      <section className="bg-[#E6E6DE] pt-10 lg:pb-0 lg:pt-0 h-auto justify-center flex overflow-hidden ">
         <div className="w-full max-w-6xl mx-auto lg:px-10 px-8 ">
           <div className="flex justify-center">
             <h1 className=" text-[2.3em] lg:text-7xl  max-w-[450px] tracking-normal lg:max-w-[650px] py-12  text-gray-800 leading-tight font-semibold text-center">Discover the world of Matcha</h1>
@@ -337,6 +337,132 @@ const Home = () => {
           </div>
         </div>
       </section >
+
+      {/* explore matcha section */}
+      <section className="bg-[#E6E6DE] flex flex-col">
+        <div className="flex justify-center items-center py-15">
+          <button className=" flex items-center gap-2 rounded-md bg-[#C8F82C] px-2 py-2 text-xs font-medium text-[#0B1A0C]">Explore All Products <ArrowRightCircle size={16} color="#020000ff" strokeWidth={1.5} /></button>
+        </div>
+        <div className="flex flex-row justify-center p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch items-center flex-1 max-w-[1020px] mx-auto ">
+          {/* first card-explore */}
+          <div className="bg-[#E3E2E4]  max-w-[360px] items-center lg:max-w-[300px] p-5 overflow-hidden rounded-xl lg:flex-col">
+            <div className="flex flex-row gap-20 lg:gap-10">
+              <div className="flex flex-col  gap-3 lg:gap-4">
+                <h1 className="font-semibold text-[17px] tracking-[0.1em] leading-tight">Matcha Latte Mix</h1>
+                <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin max-w-[190px] leading-tight">Pre-mixed matcha latte natural sweetener and creamy taste</p>
+              </div>
+              <div>
+                <h1 className="font-semibold text-[17px] tracking-[0.1em] leading-tight">$5</h1>
+              </div>
+            </div>
+            <div className="relative rounded-xl translate-y-[10px]">
+              <img src="/images/coldcoffe.png" alt="coldcoffe" className="w-full h-[280px] translate-y-[10px] scale-[1.2] flex bottom-0 right-0 w-[100%] object-contain" />
+              <div className="absolute -inset-x-6 bottom-0 translate-y-[10px] w-[500px] h-[150px] bg-gradient-to-t from-white/40 to-transparent backdrop-blur-md [mask-image:linear-gradient(to_top,black_20%,transparent)] z-0 pointer-events-none"></div>
+              <h1 className="absolute bottom-8 w-full text-center text-white font-bold text-[25px] z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] tracking-wide">
+                Latte Mix</h1>
+            </div>
+          </div>
+          {/* second cards -explore */}
+          <div className="flex flex-col  items-center gap-6">
+
+            <h1 className="font-bold text-[36px] tracking-[0.1em] leading-tight text-center">
+              Matcha Pairing Essentials
+            </h1>
+            <p className="text-[10px] lg:text-[15px] text-[#71716C] font-extrathin leading-tight text-center max-w-[230px] mx-auto">
+              Explore ideal matcha pairings! <br />
+              Our kits include premium matcha, <br />
+              tips to elevate your experience
+            </p>
+
+            <div className="flex flex-col h-full justify-end">
+              <button className=" flex items-center gap-2 rounded-md bg-[#C8F82C] px-2 py-2 text-xs font-medium text-[#0B1A0C]">Explore All Products <ArrowRightCircle size={16} color="#020000ff" strokeWidth={1.5} /></button>
+            </div>
+          </div>
+          {/* third cards -explore */}
+          <div className="bg-[#E3E2E4] lg:max-w-[400px] lg:max-h-[500px] rounded-xl p-5 overflow-hidden relative  flex flex-col ">
+            <div className="flex lg:flex-row gap-20 lg:gap-5">
+              <div className=" flex flex-col gap-4">
+                <h1 className="font-exo text-[17px] tracking-[0.1em] leading-tight">Matcha Cake Powder</h1>
+                <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin  h-auto w-[200px] lg:max-w-[700px] leading-tight">Matcha cake powder adds vibrant green color and earthy flavor to desserts</p>
+              </div>
+              <div>
+                <h1 className="font-semibold text-[17px] tracking-[0.1em] leading-tight">$5</h1>
+              </div>
+            </div>
+            <div className="relative rounded-xl">
+              <img src="/images/cheesecake.png" alt="cheesecake" className="w-full h-[280px] translate-y-[30px] scale-[1.2] lg:scale-[1.4] flex bottom-0 right-0 w-[100%] object-contain" />
+              <div className="absolute -inset-x-6 bottom-0 translate-y-[10px] w-[500px] h-[150px] bg-gradient-to-t from-white/40 to-transparent backdrop-blur-md [mask-image:linear-gradient(to_top,black_20%,transparent)] z-0 pointer-events-none"></div>
+              <h1 className="absolute bottom-8 w-full text-center text-white font-bold text-[25px] z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] tracking-wide">
+                Cake Kit</h1>
+            </div>
+          </div>
+        </div>
+      </section >
+
+      {/* footer */}
+      <section className="min-h-screen overflow-hidden bg-[radial-gradient(ellipse_at_50%_1%,#2A4125_5%,#21371F_18%,#122415_38%,#05170C_65%)] text-white">
+        {/* navbar */}
+        <div className="flex flex-col p-16 leading-tight ">
+          {/* left side */}
+          <div className="flex flex-col lg:flex-row ">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-[2.5em]  max-w-[800px] lg:max-w-[500px]"> Save up to 50% or more on matcha powder</h1>
+              <p className="text-[10px] lg:text-[13px] text-[#71716C] font-extrathin whitespace-nowrap h-auto w-[200px] lg:max-w-[700px] leading-tight">
+                Get 50% off our premium matcha powder this double date
+              </p>
+              <div className="py-12">
+                <button className=" flex items-center gap-2 rounded-md bg-[#C8F82C] px-2 py-2 text-xs font-medium text-[#0B1A0C]">Subscribe Us <ArrowRightCircle size={16} color="#020000ff" strokeWidth={1.5} /></button>
+              </div>
+            </div>
+            <div>
+              <nav className="pt-3 px-6 flex flex-row gap-6 text-[16px]">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Testimonials</a>
+              </nav>
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-8 whitespace-nowrap lg:gap-12  text-[15px] lg:text-[17px]">
+            <span>+62 812 3456 7890</span>
+            <span>maton@gmail.com</span>
+          </div>
+
+          <div className="flex flex-col lg:flex-row">
+            <div className="grid grid-cols-2 py-20 gap-7  text-[#C2C2BC] font-extrathin whitespace-nowrap">
+              <NavLink to="/products" className="flex items-center gap-2">
+                Matcha powder<ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+              </NavLink>
+              <NavLink to="/testimonial" className="flex items-center gap-2">
+                Matcha starter kit <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+              </NavLink>
+              <NavLink to="/testimonial" className="flex items-center gap-2">
+                Matcha latte mix <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+              </NavLink>
+              <NavLink to="/testimonial" className="flex items-center gap-2">
+                Matcha cake powder  <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+              </NavLink>
+            </div>
+            <div>
+              <div>
+                <img src="/images/collections.png" alt="collections" className=" flext items-right w-[200px] h-[200px] object-contain" />
+              </div>
+              <div>
+                <a href="#">Privacy & policy</a>
+                <a href="#">Terms & conditions</a>
+              </div>
+            </div>
+          </div>
+          {/* right section */}
+          {/* <div className="flex">
+            <span>maton © 2024</span>
+            <div>
+              <a href="#">Privacy & policy</a>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </div> */}
+        </div>
+      </section>
     </>
   );
 };
