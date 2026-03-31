@@ -400,7 +400,7 @@ const Home = () => {
       </section >
 
       {/* footer */}
-      <section className="min-h-screen overflow-hidden bg-[radial-gradient(ellipse_at_50%_1%,#2A4125_5%,#21371F_18%,#122415_38%,#05170C_65%)] text-white">
+      <section className=" minh-screen lg:max-h-[650px] overflow-hidden bg-[radial-gradient(ellipse_at_50%_1%,#2A4125_5%,#21371F_18%,#122415_38%,#05170C_65%)] text-white">
         {/* navbar */}
         <div className="flex flex-col p-16 leading-tight ">
           {/* left side */}
@@ -423,44 +423,56 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-8 whitespace-nowrap lg:gap-12  text-[15px] lg:text-[17px]">
+          <div className="flex flex-row py-6 gap-8 whitespace-nowrap lg:gap-12  text-[15px] lg:text-[17px]">
             <span>+62 812 3456 7890</span>
             <span>maton@gmail.com</span>
           </div>
 
-          <div className="flex flex-col lg:flex-row">
-            <div className="grid grid-cols-2 py-20 gap-7  text-[#C2C2BC] font-extrathin whitespace-nowrap">
-              <NavLink to="/products" className="flex items-center gap-2">
-                Matcha powder<ArrowRight className="text-xs w-3 h-3 -rotate-40" />
-              </NavLink>
-              <NavLink to="/testimonial" className="flex items-center gap-2">
-                Matcha starter kit <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
-              </NavLink>
-              <NavLink to="/testimonial" className="flex items-center gap-2">
-                Matcha latte mix <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
-              </NavLink>
-              <NavLink to="/testimonial" className="flex items-center gap-2">
-                Matcha cake powder  <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
-              </NavLink>
+          {/* Relative container ensures the image stays anchored here */}
+          <div className="relative flex flex-col lg:flex-row py-12 w-full min-h-[100px]">
+
+            {/* Left Side: Product Links (Normal flow, won't be pushed) */}
+            <div className="flex justify-between items-center text-[#C2C2BC] py-20 max-md:flex-col max-md:gap-10">
+              {/* Left section - all product links now in ONE horizontal row */}
+              <div className="grid grid-cols-2 gap-6 font-extralight whitespace-nowrap">
+                <NavLink to="/products" className="flex items-center gap-2 hover:text-white">
+                  Matcha powder
+                  <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+                </NavLink>
+                <NavLink to="/testimonial" className="flex items-center gap-2 hover:text-white">
+                  Matcha starter kit
+                  <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+                </NavLink>
+                <NavLink to="/testimonial" className="flex items-center gap-2 hover:text-white">
+                  Matcha latte mix
+                  <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+                </NavLink>
+                <NavLink to="/testimonial" className="flex items-center gap-2 hover:text-white">
+                  Matcha cake powder
+                  <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
+                </NavLink>
+              </div>
+
+              {/* Right section - copyright + legal links in ONE horizontal row */}
+              <div className="flex items-center gap-6 absolute right-12 bottom-32 max-md:relative max-md:right-0 max-md:bottom-0 max-md:flex-col max-md:gap-4 max-md:mt-10">
+                <span>maton © 2024</span>
+                <div className="flex gap-6 max-md:gap-4">
+                  <a href="#" className="hover:text-white">Privacy & policy</a>
+                  <a href="#" className="hover:text-white">Terms & conditions</a>
+                </div>
+              </div>
             </div>
-            <div>
-              <div>
-                <img src="/images/collections.png" alt="collections" className=" flext items-right w-[200px] h-[200px] object-contain" />
-              </div>
-              <div>
-                <a href="#">Privacy & policy</a>
-                <a href="#">Terms & conditions</a>
-              </div>
+
+
+            {/* Right Side: Image (Absolute positioning so it doesn't affect the left) */}
+            <div className="absolute -right-40 bottom-50 flex flex-col items-end z-0 items-center gap-6 max-md:relative max-md:right-0 max-md:bottom-0 max-md:mt-20">
+              <img
+                src="/images/collections.png"
+                alt="collections"
+                className="w-[400px] lg:w-[700px] h-auto object-contain pointer-events-none max-md:w-full max-md:max-w-[400px]"
+              />
             </div>
           </div>
-          {/* right section */}
-          {/* <div className="flex">
-            <span>maton © 2024</span>
-            <div>
-              <a href="#">Privacy & policy</a>
-              <a href="#">Terms & conditions</a>
-            </div>
-          </div> */}
         </div>
       </section>
     </>
