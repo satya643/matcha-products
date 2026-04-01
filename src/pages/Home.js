@@ -1,50 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { LogIn, ShoppingBag, ArrowRightCircle } from "@deemlol/next-icons";
+import { ArrowRightCircle } from "@deemlol/next-icons";
 import { ArrowRight } from "lucide-react";
+import Navbar from "./Navbar";
 
 const Home = () => {
   return (
     <>
       <div className="min-h-screen overflow-hidden bg-[radial-gradient(ellipse_at_50%_1%,#2A4125_5%,#21371F_18%,#122415_38%,#05170C_65%)] text-white">
-        {/* Navigation */}
-        <nav className="flex flex-col md:flex-row items-center justify-between p-5 gap-6 md:gap-0">
-          < div className="flex flex-col md:flex-row items-center gap-6 md:gap-8" >
-            <div>
-              <h1 className="font-[Audiowide] uppercase tracking-[0.18em] text-[29px] text-[#EAFBE7] leading-none">
-                MATON
-              </h1>
-              <div className="text-[5.8px] text-center">maintain own</div>
-            </div>
+        <Navbar />
+        <section className="flex flex-col max-auto h-auto lg:flex-row items-center justify-between px-6 lg:px-10 py-14 relative z-20 gap-16 lg:gap-0">
+          <div className="w-full lg:w-[25%] flex flex-col items-center lg:items-start text-center lg:text-left -mt-0 lg:-mt-15">
+            <div className="starter-kit flex flex-col gap-3 sm:gap-4 lg:gap-5 items-center lg:items-start">
+              <h3 className="font-semibold text-[17px] tracking-[0.18em] text-[#EAFBE7] leading-none">
+                Free Starter Kits
+              </h3>
 
-            <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-xs">
-              <NavLink to="/" className="flex items-center gap-1" >Home<span class="text-md">🙂</span></NavLink>
-              <NavLink to="/products" className="flex items-center gap-1">
-                Products <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
-              </NavLink>
-              <NavLink to="/testimonial" className="flex items-center gap-1">
-                Testimonial <ArrowRight className="text-xs w-3 h-3 -rotate-40" />
-              </NavLink>
-            </div>
-          </div >
-          <div className="nav-right flex gap-6 md:gap-10">
-            <NavLink to="/login" className="flex text-[#FFFFFF] text-xs items-center gap-1">
-              Sign In <LogIn size={10} color="#FFFFFF" strokeWidth={1.5} />
-            </NavLink>
-            <NavLink to="/cart" className="flex text-[#FFFFFF] text-xs items-center gap-1">
-              My Cart <ShoppingBag size={14} fill="#FFFFFF" color="#120101ff" strokeWidth={1.5} />
-            </NavLink>
-          </div>
-        </nav >
-
-        {/* Hero Section */}
-        < section className="flex flex-col max-auto h-auto lg:flex-row items-center justify-between px-6 lg:px-10 py-14 relative z-20 gap-16 lg:gap-0" >
-
-          <div className="w-full lg:w-[25%]  flex flex-col items-center lg:items-start text-center lg:text-left -mt-0 lg:-mt-15">
-
-            <div className="starter-kit flex flex-col gap-3 sm:gap-4 lg:gap-5  items-center lg:items-start">
-              <h3 className="font-semibold text-[17px] tracking-[0.18em] text-[#EAFBE7] leading-none">Free Starter Kits</h3>
-              <p className="text-[13px]  text-[#A9B9AA] leading-[1.6] max-w-[180px]">
+              <p className="text-[13px] text-[#A9B9AA] leading-[1.6] max-w-[180px]">
                 Free beginner or starter kit with purchases over $50.
               </p>
 
@@ -61,30 +33,54 @@ const Home = () => {
                 />
               </div>
 
-              <p className="text-[13px] text-[#A9B9AA] leading-[1.6] max-w-[180px]">We offer free shipping on orders over $30! Limited time only!</p>
-              <p title="Premium Matcha" className="text-[25px] text-[#EAFBE7]">プレミアム抹茶</p>
+              <p className="text-[13px] text-[#A9B9AA] leading-[1.6] max-w-[180px]">
+                We offer free shipping on orders over $30! Limited time only!
+              </p>
+
+              <p title="Premium Matcha" className="text-[25px] text-[#EAFBE7]">
+                プレミアム抹茶
+              </p>
             </div>
           </div>
-          {/* center content */}
+
           <div className="hero-center w-full lg:w-[50%] flex flex-col items-center text-center gap-18">
-            <div className=" font-semibold text-[50px] lg:text-[90px] text-[#EAFBE7] leading-[1.1] tracking-[-0.02em] space-y-4">
+            <div className="font-semibold text-[50px] lg:text-[90px] text-[#EAFBE7] leading-[1.1] tracking-[-0.02em] space-y-4">
               <h2>Best Matcha</h2>
               <h2 className="text-center">in Town</h2>
             </div>
-            <img src="/images/ceremonial_matcha_bowl.png" alt="Matcha Bowl with whisk" className="w-[250px] h-[250px] lg:w-[360px] lg:h-[360px]" />
+
+            <img
+              src="/images/ceremonial_matcha_bowl.png"
+              alt="Matcha Bowl with whisk"
+              className="w-[250px] h-[250px] lg:w-[360px] lg:h-[360px]"
+            />
           </div>
-          {/* right content */}
-          <div className="hero-right w-full md:w-[25%] flex flex-col items-center md:items-end text-center md:text-right gap-2 -translate-x-0 md:-translate-x-1 -mt-0 ">
-            <img src="/images/coffe.png" alt="Small Matcha cup" className="w-60 h-60 object-contain  translate-x-5 lg:translate-x-10" />
-            <h3 className="font-semibold text-[17px] tracking-[0.18em] text-[#EAFBE7] leading-none">Premium Matcha</h3>
+
+          <div className="hero-right w-full md:w-[25%] flex flex-col items-center md:items-end text-center md:text-right gap-2 -translate-x-0 md:-translate-x-1 -mt-0">
+            <img
+              src="/images/coffe.png"
+              alt="Small Matcha cup"
+              className="w-60 h-60 object-contain translate-x-5 lg:translate-x-10"
+            />
+
+            <h3 className="font-semibold text-[17px] tracking-[0.18em] text-[#EAFBE7] leading-none">
+              Premium Matcha
+            </h3>
+
             <p className="text-[13px] leading-[1.6] text-[#A9B9AA] max-w-[180px]">
               Premium quality, made from first-harvest tea leaves.
             </p>
-            <p className=" my-6 text-[18px] text-[#EAFBE7]">30gr</p>
-            <button className=" flex items-center gap-2 rounded-md bg-[#C8F82C] px-2 py-2 text-xs font-medium text-[#0B1A0C]">Shop Now <ArrowRightCircle size={16} color="#020000ff" strokeWidth={1.5} /></button>
+
+            <p className="my-6 text-[18px] text-[#EAFBE7]">30gr</p>
+
+            <button className="flex items-center gap-2 rounded-md bg-[#C8F82C] px-2 py-2 text-xs font-medium text-[#0B1A0C]">
+              Shop Now{" "}
+              <ArrowRightCircle size={16} color="#020000ff" strokeWidth={1.5} />
+            </button>
           </div>
-        </section >
-      </div >
+        </section>
+
+      </div>
       {/* Products */}
       <section className="products bg-[#E6E6DE] pt-10 lg:pt-0 h-auto lg:h-[900px] overflow-hidden ">
         <div className="flex flex-col gap-20 sm:gap-24 lg:block">

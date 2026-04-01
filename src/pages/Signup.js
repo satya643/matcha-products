@@ -1,45 +1,49 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
-const Login = () => {
 
+const Signup = () => {
     const [email, setEmail] = useState("");
+    const [is_agree, setIsAgree] = useState(false);
     const [password, setPassword] = useState("");
-    const [is_remember, setIsRemember] = useState(false);
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // stop page reload
 
-        if (email === "" || password === "") {
-            toast.error("All Fields are required");
+        if (email === "" || password === "" || confirmPassword === "") {
+            toast.error("please fill all the fields");
             return;
         }
-        // console.log(email, password, is_remember);
-        if (!is_remember) {
-            toast.error("Please check the remember me box");
+        if (!is_agree) {
+            toast.error("Please agree to the Privacy Policy & Terms");
+            return;
+        }
+        if (password !== confirmPassword) {
+            toast.error("Password does not match");
             return;
         }
 
+        //if the user is already signed up then you can not signed it upagain 
         if (email === localStorage.getItem("email") && password === localStorage.getItem("password")) {
-            toast.success("Login Successfull");
+            toast.error("You are already signed up!");
             return;
         }
-        else {
-            toast.error("Invalid Credentials");
-            return;
-        }
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+        // console.log(email, password);
 
-    }
+        toast.success("signed up successful");
+    };
 
     return (
-        <div
-            className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/images/loginbg.png')" }}
-        >
-            <div className="bg-white/10 flex flex-col gap-2 border max-w-[400px] border-white/20 backdrop-blur-md rounded-2xl shadow-xl p-8">
-                <h1 className="text-gray-300 text-2xl font-bold"><span className="text-[#A8E05A]">Welcome</span> Back</h1>
-                <p className="text-[#B8D9B5] text-sm max-w-[200px]">Log in to continue enjoying our matcha products</p>
-                <form className="flex flex-col gap-3 relative w-full" id="LoginForm" onSubmit={handleSubmit}>
+        <div className="min-h-screen flex items-center justify-center text-white bg-cover bg-no-repeat" style={{ backgroundImage: "url('/images/signup.jpg')" }}>
+            <div className="flex flex-col max-w-[400px] w-full backdrop-blur-md rounded-2xl p-8 shadow-xl bg-white/10 border border-white/20 gap-5 ">
+                <h1 className="text-2xl font-semibold">Create your <span className="text-[#8ED13F]">account!</span></h1>
+                <p className="text-[#B8D9B5] text-sm ">Sign up to explore premium matcha products</p>
+                <form className="flex flex-col gap-3 relative w-full" id="SignupForm" onSubmit={handleSubmit}>
                     <input type="text" placeholder="example@gmail.com"
                         className="bg-[#263D34] text-[#E0EDE4] p-2 text-[12px] rounded-lg
                          w-full pl-10 focus:outline-none focus:ring-2 focus:ring-[#8ED13F] border border-yellow-500
@@ -63,6 +67,7 @@ const Login = () => {
                             <path d="M3 8l9 6 9-6" />
                         </svg>
                     </div>
+
                     <input type="password" placeholder="Password"
                         className="bg-[#263D34] text-[#E0EDE4] p-2 text-[12px] rounded-lg w-full pl-10
                             focus:outline-none focus:ring-2 focus:ring-[#8ED13F] border border-yellow-500"
@@ -85,26 +90,38 @@ const Login = () => {
                             <path d="M7 11V7a5 5 0 0110 0v4" />
                         </svg>
                     </div>
-                    <div className="flex flex-row gap-12 ">
-                        <div className="flex flex-row gap-2 justify-center items-center">
-                            <input type="checkbox"
-                                checked={is_remember}
-                                onChange={(e) => setIsRemember(e.target.checked)}
-                                className="bg-[#8ED13F] rounded-xl w-4 h-4 accent-[#8ED13F] cursor-pointer " />
 
-                            <label className="text-[#B8D9B5] text-[14px]">Remember me</label>
-                        </div>
-                        <div>
-                            <NavLink to="/forgot-password" className="text-[#8ED13F] hover:brightness-110 transition">Forgot password?</NavLink>
-                        </div>
+                    <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="bg-[#263D34] text-[#E0EDE4] p-2 text-[12px] rounded-lg w-full pl-10
+                            focus:outline-none focus:ring-2 focus:ring-[#8ED13F] border border-yellow-500" />
+                    <div className=" absolute top-26 left-3.5 text-yellow-500">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" />
+                        </svg>
                     </div>
-                    <button type="submit" className="bg-[#8ED13F] text-[#0B1A0C] font-medium rounded-xl p-1 hover:brightness-110 transition text" form="LoginForm">Log in</button>
                 </form>
-                <div className="flex flex-row gap-2 justify-center items-center">
-                    <p className="text-[#B8D9B5] ">Don't have an account? <NavLink to="/signup" className="text-[#8ED13F]">Sign up</NavLink></p>
+
+                <div className="flex flex-row gap-2 text-[12px] items-center">
+                    <input type="checkbox" className="bg-[#8ED13F] rounded-xl w-3 h-3  accent-[#8ED13F] cursor-pointer "
+                        checked={is_agree}
+                        onChange={(e) => setIsAgree(e.target.checked)}
+                    />
+                    <p className="text-[#B8D9B5]">I agree to the <span className="text-[#8ED13F]">Privacy Policy &  Terms</span></p>
                 </div>
-                <p className="flex gap-2 text-[#B8D9B5] items-center text justify-center text-[14px]"><span className="text-[#8ED13F]">Or</span>Continue with</p>
-                <div className="flex flex-row gap-2 justify-center items-center">
+
+                <div className="flex flex-row gap-2 justify-center items-center whitespace-nowrap">
+                    <button type="submit" className="bg-[#8ED13F] text-[#0B1A0C] text-[11px] font-semibold px-12 py-2 rounded-xl hover:brightness-110 transition text" form="SignupForm">Sign Up</button>
                     <button className="  border border-[#8ED13F] w-full text-yellow-300 hover:text-[#B8D9B5] text-[12px] font-sm rounded-xl p-1  flex items-center justify-center gap-3 hover:brightness-110 transition"
                     >
                         <svg
@@ -123,9 +140,10 @@ const Login = () => {
                     </button>
                     {/* <button className="bg-[#8ED13F] text-[#0B1A0C] text-[12px] font-sm w-full rounded-xl p-1">Google</button> */}
                 </div>
-                {/* <p className="text-center text-[#B8D9B5] text-[12px]"   >By logging in, you agree to our <NavLink to="/terms-of-service" className="text-[#8ED13F]">Terms of Service</NavLink> and <NavLink to="/privacy-policy" className="text-[#8ED13F]">Privacy Policy</NavLink></p> */}
+                <p className=" text-[14px] flex justify-center items-center gap-1">Already have an account? <NavLink to="/login" className="text-[#8ED13F] hover:brightness-110 transition">Login</NavLink></p>
+
             </div>
-        </div>
+        </div >
     )
 }
-export default Login;
+export default Signup;
