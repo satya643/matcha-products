@@ -416,9 +416,9 @@ const Home = () => {
             </div>
             <div>
               <nav className="pt-3 px-6 flex flex-row gap-6 text-[16px]">
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">Testimonials</a>
+                <NavLink to="/  Home">Home</NavLink>
+                <NavLink to="/Products">Products</NavLink>
+                <NavLink to="/Testimonials">Testimonials</NavLink>
               </nav>
             </div>
           </div>
@@ -457,8 +457,8 @@ const Home = () => {
               <div className="flex items-center gap-6 absolute right-12 bottom-32 max-md:relative max-md:right-0 max-md:bottom-0 max-md:flex-col max-md:gap-4 max-md:mt-10">
                 <span>maton © 2024</span>
                 <div className="flex gap-6 max-md:gap-4">
-                  <a href="#" className="hover:text-white">Privacy & policy</a>
-                  <a href="#" className="hover:text-white">Terms & conditions</a>
+                  <NavLink to="/" className="hover:text-white">Privacy & policy</NavLink>
+                  <NavLink to="/" className="hover:text-white">Terms & conditions</NavLink>
                 </div>
               </div>
             </div>
